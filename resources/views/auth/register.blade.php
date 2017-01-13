@@ -38,6 +38,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">Employee Id</label>
+
+                            <div class="col-md-6">
+                                <input id="empid" type="text" class="form-control" name="empid" value="{{ old('empid') }}">
+
+                                @if ($errors->has('empid'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('empid') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
