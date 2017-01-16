@@ -16,3 +16,6 @@
 Route::auth();
 
 Route::get('/', 'HomeController@index');
+Route::get('/videolog', 'HomeController@videolog');
+Route::get('/userregister','UserRegistrationController@index');
+Route::post('/userregister','UserRegistrationController@create');

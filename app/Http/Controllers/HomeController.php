@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\videolog;
 class HomeController extends Controller
 {
     
@@ -26,5 +27,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function videolog(Request $request)
+    {
+        $videolog=new videolog;
+            $videolog->user_id=Auth::user()->id;
+            $videolog->video_id=$request['video'];
+            $videolog->save();
+       
     }
 }

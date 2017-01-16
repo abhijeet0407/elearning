@@ -133,129 +133,94 @@ hr{ border-color:#e42c33 !important;  }
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">H & R JOHNSON (INDIA)</h1>
-                <hr>
-                <p>The only entity in India to offer end-to-end lifestyle solutions covering Wall and Floor Tiles, Faucets, Sanitaryware & Wellness products, Engineered Marble and Quartz as well as Modular Kitchens.</p>
-                <a href="#portfolio" class="btn btn-primary btn-xl page-scroll">Click to watch e-Learning Videos</a>
-            </div>
-        </div>
-    </header>
+    
+    <!-- Register Form  -->
+    
+    <form class="form-horizontal" style="margin-top: 120px;" role="form" method="POST" action="<?php echo url('/userregister') ?>">
+                        <?php echo csrf_field() ?>
+                        <h2 align="center" style="margin-bottom: 15px;">User Registeration</h2>
+                        <div class="form-group<?php echo  $errors->has('name') ? ' has-error' : ''  ?> ">
+                            <label for="name" class="col-md-4 control-label">Name</label>
 
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" value="<?php echo  old('name') ?>">
+
+                              <?php if ($errors->has('name')){ ?>
+                                    <span class="help-block">
+                                        <strong><?php echo  $errors->first('name')  ?> </strong>
+                                    </span>
+                              <?php   } ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group<?php echo  $errors->has('email') ? ' has-error' : ''  ?> ">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="<?php echo  old('email')  ?> ">
+
+                               <?php if ($errors->has('email')){ ?>
+                                    <span class="help-block">
+                                        <strong><?php echo  $errors->first('email')  ?> </strong>
+                                    </span>
+                                
+                                <?php }  ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group<?php echo  $errors->has('email') ? ' has-error' : ''  ?> ">
+                            <label for="email" class="col-md-4 control-label">Employee Id</label>
+
+                            <div class="col-md-6">
+                                <input id="empid" type="text" class="form-control" name="empid" value="<?php echo  old('empid')  ?> ">
+
+                                <?php if ($errors->has('empid')) { ?>
+                                    <span class="help-block">
+                                        <strong><?php echo  $errors->first('empid')  ?> </strong>
+                                    </span>
+                                 <?php }  ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group<?php echo  $errors->has('password') ? ' has-error' : ''  ?> ">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password">
+
+                                <?php if ($errors->has('password')) { ?>
+                                    <span class="help-block">
+                                        <strong><?php echo  $errors->first('password')  ?> </strong>
+                                    </span>
+                                 <?php }  ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group<?php echo  $errors->has('password_confirmation') ? ' has-error' : ''  ?> ">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+
+                                <?php if ($errors->has('password_confirmation')){ ?>
+                                    <span class="help-block">
+                                        <strong><?php echo  $errors->first('password_confirmation')  ?> </strong>
+                                    </span>
+                                <?php } ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i> Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
     
 
-    
-
-    <section class="no-padding" id="portfolio" style="background-color: #e6e6e6; padding: 20px;">
-        <div class="container-fluid">
-            <div class="row  popup-gallery">
-
-                <!-- <div class="col-lg-6 col-sm-12">
-                    <video style="width: 100%;" src="video/1_specifier.mp4"></video>
-                </div> -->
-
-                <div class="col-lg-6 col-sm-12">
-  
-                    <div class="panel panel-default">
-                      <div class="panel-thumbnail">
-                          <video style="width: 100%;"  controls>
-                              <source src="video/1_specifier.mp4" type="video/mp4">
-                              
-                            Your browser does not support the video tag.
-                            </video>
-                      </div>
-                      <div class="panel-body">
-                        <p>1. Creation of Specifier</p>
-                        <p></p>
-
-                      </div>
-                    </div><!--/panel-->
-                </div>
-
-                <div class="col-lg-6 col-sm-12">
-  
-                    <div class="panel panel-default">
-                      <div class="panel-thumbnail">
-                          <video style="width: 100%;"  controls>
-                              <source src="video/2_creation.mp4" type="video/mp4">
-                              
-                            Your browser does not support the video tag.
-                            </video>
-                      </div>
-                      <div class="panel-body">
-                        <p>2. Project Creation & Entering of product details</p>
-                        <p></p>
-
-                      </div>
-                    </div><!--/panel-->
-                </div>
-
-
-                <div class="col-lg-6 col-sm-12">
-  
-                    <div class="panel panel-default">
-                      <div class="panel-thumbnail">
-                          <video style="width: 100%;"  controls>
-                              <source src="video/3_quotation.mp4" type="video/mp4">
-                              
-                            Your browser does not support the video tag.
-                            </video>
-                      </div>
-                      <div class="panel-body">
-                        <p>3. Quotation Creation and editing of quotation</p>
-                        <p></p>
-
-                      </div>
-                    </div><!--/panel-->
-                </div>
-
-
-                <div class="col-lg-6 col-sm-12">
-  
-                    <div class="panel panel-default">
-                      <div class="panel-thumbnail">
-                          <video style="width: 100%;"  controls>
-                              <source src="video/4_supply.mp4" type="video/mp4">
-                              
-                            Your browser does not support the video tag.
-                            </video>
-                      </div>
-                      <div class="panel-body">
-                        <p>4. Order Creation & Schedule Supply</p>
-                        <p></p>
-
-                      </div>
-                    </div><!--/panel-->
-                </div>
-                
-                
-            </div>
-        </div>
-    </section>
-
-    
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Get In Touch!</h2>
-                    <hr class="primary">
-                    <p></p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>1800-22-7484</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:customercare@hrjohnsonindia.com">customercare@hrjohnsonindia.com</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Register Form  -->
 
     <!-- jQuery -->
     <script src="https://www.hrjohnsonindia.com/elearning/public/vendor/jquery/jquery.min.js"></script>
@@ -271,34 +236,7 @@ hr{ border-color:#e42c33 !important;  }
     <!-- Theme JavaScript -->
     <script src="https://www.hrjohnsonindia.com/elearning/public/js/creative.min.js"></script>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $("video").on("play", function (e) {
-                var video=0;
-              video=$( "video" ).index( this );
-                alert(video);
-            $.ajax({
-                url: 'http://localhost:8000/videolog',
-                type: 'GET',
-                data: 'video='+video,
-            })
-            .done(function() {
-                console.log("success");
-            })
-            .fail(function() {
-                console.log("error");
-            })
-            .always(function() {
-                console.log("complete");
-            });
-
-
-
-            });
-            
-            
-        });
-    </script>
+    
 
 </body>
 
