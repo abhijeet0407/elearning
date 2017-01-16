@@ -33,7 +33,7 @@ class HomeController extends Controller
         return view('home',compact('count0','count1','count2','count3'));
     }
 
-    public function videolog(Request $request)
+    public function videologcount(Request $request)
     {
         $videolog=new videolog;
             $videolog->user_id=Auth::user()->id;

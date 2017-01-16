@@ -376,7 +376,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
               video=$( "video" ).index( this );
                // alert(video);
             $.ajax({
-                url: 'https://www.hrjohnsonindia.com/elearning/public/videolog',
+                url: 'https://www.hrjohnsonindia.com/elearning/public/videologcount',
                 type: 'GET',
                 data: 'video='+video,
             })
