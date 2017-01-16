@@ -29,6 +29,9 @@
     <!-- Theme CSS -->
     <link href="https://www.hrjohnsonindia.com/elearning/public/css/creative.min.css" rel="stylesheet">
 
+    <link href="https://www.hrjohnsonindia.com/elearning/public/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+    <link href="https://www.hrjohnsonindia.com/elearning/public/assets/advanced-datatable/extras/TableTools/media/css/TableTools.css" rel="stylesheet" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -63,8 +66,9 @@ a.dropdown-toggle{ padding-top: 10px;  }
 a { color: #e42c33 !important; }
 hr{ border-color:#e42c33 !important;  }
 .dropdown-btn{ font-size: 20px; margin-left: 10px; margin-right: 10px; }
-
+.site-min-height{ margin-top: 70px; padding: 30px; }
     </style>
+
 
 
 
@@ -89,7 +93,7 @@ hr{ border-color:#e42c33 !important;  }
                    
                         <div class="dropdown" align="right">
                             
-                               Welcome <?php echo Auth::user()->name."  "; ?>
+                              Welcome <?php echo Auth::user()->name."  "; ?>
                                <?php if(Auth::user()->id==1){ ?>
                                 <a href="javascript:void(0)" class="dropdown-toggle dropdown-btn" data-toggle="dropdown"><span class="fa fa-bars"></span></a>
                                   <ul class="dropdown-menu">
@@ -141,90 +145,46 @@ hr{ border-color:#e42c33 !important;  }
 
     
     <!-- Register Form  -->
-    
-    <form class="form-horizontal" style="margin-top: 120px;" role="form" method="POST" action="<?php echo url('/userregister') ?>">
-                        <?php echo csrf_field() ?>
-                        <h2 align="center" style="margin-bottom: 15px;">User Registeration</h2>
-                        <div class="form-group<?php echo  $errors->has('name') ? ' has-error' : ''  ?> ">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+    <div class="site-min-height">
+    <h2>User Log</h2>
+    <a class="btn btn-primary" href="<?php echo url('/userregistercreate') ?>">Add User</a>
+   <table   class="display table table-bordered table-striped" id="example">
+                                      <thead>
+                                      <tr>
+                                            <th>Sr.</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Employee Id</th>
+                                          
+                                           
+                                            <th>Logged In</th>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="<?php echo  old('name') ?>">
-
-                              <?php if ($errors->has('name')){ ?>
-                                    <span class="help-block">
-                                        <strong><?php echo  $errors->first('name')  ?> </strong>
-                                    </span>
-                              <?php   } ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group<?php echo  $errors->has('email') ? ' has-error' : ''  ?> ">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="<?php echo  old('email')  ?> ">
-
-                               <?php if ($errors->has('email')){ ?>
-                                    <span class="help-block">
-                                        <strong><?php echo  $errors->first('email')  ?> </strong>
-                                    </span>
-                                
-                                <?php }  ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group<?php echo  $errors->has('email') ? ' has-error' : ''  ?> ">
-                            <label for="email" class="col-md-4 control-label">Employee Id</label>
-
-                            <div class="col-md-6">
-                                <input id="empid" type="text" class="form-control" name="empid" value="<?php echo  old('empid')  ?> ">
-
-                                <?php if ($errors->has('empid')) { ?>
-                                    <span class="help-block">
-                                        <strong><?php echo  $errors->first('empid')  ?> </strong>
-                                    </span>
-                                 <?php }  ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group<?php echo  $errors->has('password') ? ' has-error' : ''  ?> ">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
-
-                                <?php if ($errors->has('password')) { ?>
-                                    <span class="help-block">
-                                        <strong><?php echo  $errors->first('password')  ?> </strong>
-                                    </span>
-                                 <?php }  ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group<?php echo  $errors->has('password_confirmation') ? ' has-error' : ''  ?> ">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-
-                                <?php if ($errors->has('password_confirmation')){ ?>
-                                    <span class="help-block">
-                                        <strong><?php echo  $errors->first('password_confirmation')  ?> </strong>
-                                    </span>
-                                <?php } ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-user"></i> Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-    
+                                           <!--  <th>Logged Out</th> -->
+                                           
+                                          
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                             <?php $i=1; if(isset($userlog)){
+                             foreach($userlog as $usr){
+                             $us=$user->find($usr->user_id);
+                             $usl=$userlogout->where('id','=',6);
+                             //echo $usl;
+                              ?>      
+                                      <tr >
+                                        <td><?php echo $i; ?></td>
+                                        <td><?php echo $us->name ?></td>
+                                        <td><?php echo $us->email ?></td>
+                                        <td><?php echo $us->empid ?></td>
+                                        
+                                        <td><?php echo $usr->created_at; ?></td>
+                                        <!-- <td><?php //echo $usl->created_at; ?></td> -->
+                                      </tr>
+                               <?php $i++; } } ?>       
+                                      </tbody>
+                                     
+                          </table>
+</div>
 
     <!-- Register Form  -->
 
@@ -238,11 +198,37 @@ hr{ border-color:#e42c33 !important;  }
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="https://www.hrjohnsonindia.com/elearning/public/vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="https://www.hrjohnsonindia.com/elearning/public/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
+    <script type="text/javascript" language="javascript" src="https://www.hrjohnsonindia.com/elearning/public/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="https://www.hrjohnsonindia.com/elearning/public/assets/advanced-datatable/extras/TableTools/media/js/TableTools.min.js"></script>
+     
+     
     <!-- Theme JavaScript -->
     <script src="https://www.hrjohnsonindia.com/elearning/public/js/creative.min.js"></script>
 
-    
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#example').dataTable({
+                  "sDom": 'T<"clear">lfrtip',
+                  
+        "oTableTools": {
+            "sSwfPath": "assets/advanced-datatable/extras/TableTools/media/swf/copy_csv_xls_pdf.swf",
+            "aButtons": [
+               
+                {
+                    "sExtends": "xls",
+                    "sTitle": "category"
+                },
+                {
+                    "sExtends": "pdf",
+                    "sTitle": "category"
+                }
+                
+            ]
+        }
+                  
+                  });
+        });
+    </script>
 
 </body>
 

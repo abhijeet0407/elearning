@@ -23,4 +23,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function userlog(){
+        return $this->hasMany('App\userlog');
+    }
+
+    public function videolog(){
+        return $this->hasMany('App\userlog');
+    }
 }

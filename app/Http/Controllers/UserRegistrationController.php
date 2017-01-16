@@ -6,23 +6,52 @@ use Illuminate\Http\Request;
 use Mail;
 use App\Http\Requests;
 use App\User;
+use App\userlog;
+use App\userlogout;
+use App\videolog;
 use Illuminate\Support\Facades\Validator;
 class UserRegistrationController extends Controller
 {
     //
     public function index()
     {
-
-    	return view('register');
+    	$user=User::where('id','!=',1)->get();
+    	return view('registerlist',compact('user'));
 
     }
+
+    public function userlog()
+    {
+        $userlog=userlog::where('user_id','!=',1)->get();
+        $user=User::where('id','!=',1)->get();
+        $userlogout=userlogout::where('user_id','!=',1)->get();
+        
+        return view('userlog',compact('user','userlog','userlogout'));
+
+    }
+
+    public function videolog()
+    {
+        $videolog=videlog::where('user_id','!=',1)->get();
+        $user=User::where('id','!=',1)->get();
+        return view('videolog',compact('user','videolog'));
+
+    }
+
+
      public function __construct()
     {
         $this->middleware('auth');
     }
 
+    public function create()
+    {
+    	
+    	return view('register');
 
-    protected function create(Request $request)
+    }
+
+    protected function store(Request $request)
     {
 
     	$validator = Validator::make($request->all(), [
@@ -192,7 +221,7 @@ $mail = mail($to2,$subject2,$message2,$headers);
 
          /**/
 
-         return redirect('/');
+         return redirect('/userregister');
 
 
     }
