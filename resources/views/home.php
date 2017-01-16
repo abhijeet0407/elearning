@@ -254,7 +254,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                         <p>Creation of Specifier</p>
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 video_views">14,994 <span>views</span></div>
+                            <div class="col-md-6 video_views"><?php echo $count0; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>9.28 Min</span></div>
                         </div>
                       </div>
@@ -276,7 +276,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                         <p>Project Creation & Entering of product details</p>
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 video_views">14,994 <span>views</span></div>
+                            <div class="col-md-6 video_views"><?php echo $count1; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>12.22 Min</span></div>
                         </div>
                       </div>
@@ -299,7 +299,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                         <p>Quotation Creation and editing of quotation</p>
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 video_views">14,994 <span>views</span></div>
+                            <div class="col-md-6 video_views"><?php echo $count2; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>7.23 Min</span></div>
                         </div>
                       </div>
@@ -321,7 +321,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                         <p>Order Creation & Schedule Supply</p>
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 video_views">14,994 <span>views</span></div>
+                            <div class="col-md-6 video_views"><?php echo $count3; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>8.13 Min</span></div>
                         </div>
                       </div>
@@ -374,7 +374,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
             $("video").on("play", function (e) {
                 var video=0;
               video=$( "video" ).index( this );
-                alert(video);
+               // alert(video);
             $.ajax({
                 url: 'http://localhost:8000/videolog',
                 type: 'GET',

@@ -26,7 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $count0 = videolog::where('video_id','=',0)->count();
+        $count1 = videolog::where('video_id','=',1)->count();
+        $count2 = videolog::where('video_id','=',2)->count();
+        $count3 = videolog::where('video_id','=',3)->count();
+        return view('home',compact('count0','count1','count2','count3'));
     }
 
     public function videolog(Request $request)
