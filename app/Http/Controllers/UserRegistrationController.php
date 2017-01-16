@@ -96,18 +96,18 @@ $message2='<table width="580" cellpadding="0" cellspacing="0" align="center">
 							<td style=" width:100%">
 							<table style="width:100%;" border="0" style="  border-collapse: collapse;">
 							<tr>
-								<th align="right"  style="width:35%; line-height:24px;">Login Link</th>
+								<th align="right"  style="width:35%; line-height:24px;">Application Link: </th>
 									<td align="left" style="width:65%; padding:10px; line-height:24px;"><a href="http:hrjohnsonindia.com">Link</a></td>
 								</tr>
 								
 								
 								<tr>
-								<th align="right"  style="width:35%; line-height:24px;">Username</th>
+								<th align="right"  style="width:35%; line-height:24px;">Username: </th>
 									<td align="left" style="width:65%; padding:10px; line-height:24px;">'.$request['empid'].'</td>
 								</tr>
 								
 								<tr>
-								<th align="right"  style="width:35%;line-height:24px;">Password</th>
+								<th align="right"  style="width:35%;line-height:24px;">Password: </th>
 									<td align="left" style="width:65%; padding:10px line-height:24px;;">'.$request['password'].'</td>
 								</tr>
 								
@@ -192,7 +192,7 @@ $mail = mail($to2,$subject2,$message2,$headers);
 
          /**/
 
-         return view('/');
+         return redirect('/');
 
 
     }
