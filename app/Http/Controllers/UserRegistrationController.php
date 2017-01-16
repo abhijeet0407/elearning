@@ -32,7 +32,7 @@ class UserRegistrationController extends Controller
 
     public function videolog()
     {
-        $videolog=videlog::where('user_id','!=',1)->get();
+        $videolog=videolog::where('user_id','!=',1)->get();
         $user=User::where('id','!=',1)->get();
         return view('videolog',compact('user','videolog'));
 
