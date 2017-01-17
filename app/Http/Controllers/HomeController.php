@@ -38,11 +38,13 @@ class HomeController extends Controller
 
     public function forgotpasssubmit(Request $request){
         $user=User::where('email','=',$request['email'])->where('remember_token','=',$request['tok'])->first();  
-        return $user;
-        $user->password=bcrypt($request['password']);
+        //return $user;
+
+        $user2=User::find($user->id);
+        $user2->password=bcrypt($request['password']);
         
-        $user->save();
-        
+        $user2->save();
+        return 1;
 
     }
      public function forgotpass(Request $request){
