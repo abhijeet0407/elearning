@@ -126,7 +126,7 @@ $message2='<table width="580" cellpadding="0" cellspacing="0" align="center">
 							<table style="width:100%;" border="0" style="  border-collapse: collapse;">
 							<tr>
 								<th align="right"  style="width:35%; line-height:24px;">Application Link: </th>
-									<td align="left" style="width:65%; padding:10px; line-height:24px;"><a href="http:hrjohnsonindia.com">Link</a></td>
+									<td align="left" style="width:65%; padding:10px; line-height:24px;"><a href="https://www.hrjohnsonindia.com/elearning/public/login">Link</a></td>
 								</tr>
 								
 								
