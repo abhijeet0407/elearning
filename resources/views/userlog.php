@@ -159,7 +159,7 @@ hr{ border-color:#e42c33 !important;  }
                                            
                                             <th>Logged In</th>
 
-                                           <!--  <th>Logged Out</th> -->
+                                             <th>Logged Out</th> 
                                            
                                           
                                       </tr>
@@ -168,7 +168,7 @@ hr{ border-color:#e42c33 !important;  }
                              <?php $i=1; if(isset($userlog)){
                              foreach($userlog as $usr){
                              $us=$user->find($usr->user_id);
-                             $usl=$userlogout->where('id','=',6);
+                             $usl=$userlogout->where('userlog_id',$usr->id)->first();
                              //echo $usl;
                               ?>      
                                       <tr >
@@ -178,7 +178,7 @@ hr{ border-color:#e42c33 !important;  }
                                         <td><?php echo $us->empid ?></td>
                                         
                                         <td><?php echo $usr->created_at; ?></td>
-                                        <!-- <td><?php //echo $usl->created_at; ?></td> -->
+                                         <td><?php if($usl!=''){ echo $usl->created_at; }; ?></td>
                                       </tr>
                                <?php $i++; } } ?>       
                                       </tbody>

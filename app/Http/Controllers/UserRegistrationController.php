@@ -32,9 +32,10 @@ class UserRegistrationController extends Controller
 
     public function videolog()
     {
+        $videolog2=videolog::where('user_id','!=',1)->groupby('userlog_id')->get();
         $videolog=videolog::where('user_id','!=',1)->get();
         $user=User::where('id','!=',1)->get();
-        return view('videolog',compact('user','videolog'));
+        return view('videolog',compact('user','videolog','videolog2'));
 
     }
 

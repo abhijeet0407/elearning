@@ -165,10 +165,11 @@ hr{ border-color:#e42c33 !important;  }
                                       </tr>
                                       </thead>
                                       <tbody>
-                             <?php $i=1; if(isset($videolog)){
-                             foreach($videolog as $usr){
+                             <?php $i=1; if(isset($videolog2)){
+                             foreach($videolog2 as $usr){
                              $us=$user->find($usr->user_id);
-                             //$usl=$userlogout->where('id','=',6);
+                             //echo $usr->userlog_id;
+                             $usl=$videolog->where('userlog_id',$usr->userlog_id);
                              //echo $usl;
                               ?>      
                                       <tr >
@@ -177,7 +178,14 @@ hr{ border-color:#e42c33 !important;  }
                                         <td><?php echo $us->email ?></td>
                                         <td><?php echo $us->empid ?></td>
                                         
-                                        <td><?php echo $vids[$usr->video_id]; ?></td>
+                                        <td><?php $usd_arr=[];
+                                        foreach($usl as $usd){
+                                        	$usd_arr[]=$vids[$usd->video_id];
+                                        }	
+                                         
+                                        echo implode(', ',$usd_arr);
+
+                                          ?></td>
                                         <!-- <td><?php //echo $usl->created_at; ?></td> -->
                                       </tr>
                                <?php $i++; } } ?>       
