@@ -35,10 +35,14 @@ class HomeController extends Controller
 
     public function videologcount(Request $request)
     {
+        $check_video=videolog::where('video_id','=',$request['video'])->where('userlog_id','=',$request->session()->get('UserLoginId'))->count();
+        if($check_video==0){
         $videolog=new videolog;
             $videolog->user_id=Auth::user()->id;
             $videolog->video_id=$request['video'];
+            $videolog->userlog_id=$value = $request->session()->get('UserLoginId');
             $videolog->save();
+        }    
        
     }
 }
