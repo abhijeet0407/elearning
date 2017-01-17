@@ -327,7 +327,7 @@ form button:hover {
                     data: 'password='+$('#forgotpasssubmit').find('[name="password"]').val()+'&email='+$('#forgotpasssubmit').find('[name="email"]').val()+'&tok='+$('#forgotpasssubmit').find('[name="tok"]').val(),
                   })
                   .done(function(data) {
-                    console.log("data");
+                    console.log(data);
                     if(data==1){
 
                       swal({

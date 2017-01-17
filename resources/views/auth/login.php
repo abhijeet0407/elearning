@@ -232,7 +232,7 @@ form button:hover {
     margin-top: 10px;
     padding-left: 175px; }
     #myModal label,.modal-title{ color: #000 !important; }
-    #myModal form input:focus{ width: 100% !important; text-align: left; }
+   .em:focus{ width: 100% !important; text-align: left; }
     </style>
 </head>
 <body >
@@ -287,7 +287,7 @@ form button:hover {
         <form method="post" id="forgotpassword" action=" <?php echo url('/forgotpassword') ?>  ">
              <div class="form-group">
                 <label for="email">Email address:</label>
-                 <input type="email" name="email" class="form-control"   required="required">
+                 <input type="email" name="email" class="form-control em"   required="required">
               </div>
               
            
