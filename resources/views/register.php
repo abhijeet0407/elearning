@@ -142,7 +142,7 @@ hr{ border-color:#e42c33 !important;  }
     
     <!-- Register Form  -->
     
-    <form class="form-horizontal" style="margin-top: 120px;" role="form" method="POST" action="<?php echo url('/userregister') ?>">
+    <form class="form-horizontal" style="margin-top: 120px;" role="form" method="POST" action="<?php echo url('/userregistercreate') ?>">
                         <?php echo csrf_field() ?>
                         <h2 align="center" style="margin-bottom: 15px;">User Registeration</h2>
                         <div class="form-group<?php echo  $errors->has('name') ? ' has-error' : ''  ?> ">
