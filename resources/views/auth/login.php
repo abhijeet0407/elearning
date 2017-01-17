@@ -337,7 +337,7 @@ form button:hover {
 
 
                         },function(){
-                               
+                               window.location.reload();
                             })
 
                     }else{

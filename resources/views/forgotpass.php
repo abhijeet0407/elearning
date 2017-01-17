@@ -240,10 +240,11 @@ form button:hover {
 	<div class="container">
 		<img src="img/logo-johnson.png">
 		
-		<form class="form-horizontal" id="forgotpasssubmit"> role="form" method="POST" action="<?php echo url('/forgotpasssubmit') ?>">
+		<form class="form-horizontal" id="forgotpasssubmit" role="form" method="POST" action="<?php echo url('/forgotpasssubmit') ?>">
                         <?php echo csrf_field() ?>
 			<input type="text" name="email" disabled="disabled" placeholder="Username" value="<?php echo $user->email ?>">
 			<input type="password" name="password" placeholder="Password">
+      <input type="hidden" name="tok" disabled="disabled" placeholder="Username" value="<?php echo $_GET['token'] ?>">
 			<button type="submit" id="login-button">Change Password</button>
       <div class="clearfix"></div>
       
@@ -323,7 +324,7 @@ form button:hover {
                 $.ajax({
                     url: '<?php echo url('/forgotpasssubmit') ?>',
                     type: 'GET',
-                    data: 'password='+$('#forgotpasssubmit').find('[name="password"]').val(),
+                    data: 'password='+$('#forgotpasssubmit').find('[name="password"]').val()+'&email='+$('#forgotpasssubmit').find('[name="email"]').val()+'&tok='+$('#forgotpasssubmit').find('[name="tok"]').val(),
                   })
                   .done(function(data) {
                     //console.log("success");
@@ -337,7 +338,7 @@ form button:hover {
 
 
                         },function(){
-                               
+                               window.location.href='<?php echo url('/login') ?>'
                             })
 
                     }else{

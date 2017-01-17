@@ -19,7 +19,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/changepassword', 'HomeController@changepassword');
 Route::get('/forgotpassword', 'HomeController@forgotpassword');
 Route::get('/forgotpass', 'HomeController@forgotpass');
-//Route::get('/forgotpass', 'HomeController@forgotpasssubmit');
+Route::get('/forgotpasssubmit', 'HomeController@forgotpasssubmit');
 Route::get('/videologcount', 'HomeController@videologcount');
 Route::get('/userregister','UserRegistrationController@index');
 Route::get('/userregistercreate','UserRegistrationController@create');
