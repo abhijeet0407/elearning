@@ -327,7 +327,7 @@ form button:hover {
                     data: 'password='+$('#forgotpasssubmit').find('[name="password"]').val()+'&email='+$('#forgotpasssubmit').find('[name="email"]').val()+'&tok='+$('#forgotpasssubmit').find('[name="tok"]').val(),
                   })
                   .done(function(data) {
-                    //console.log("success");
+                    console.log("data");
                     if(data==1){
 
                       swal({
@@ -338,7 +338,7 @@ form button:hover {
 
 
                         },function(){
-                               window.location.href='<?php echo url('/login') ?>'
+                               //window.location.href='<?php echo url('/login') ?>'
                             })
 
                     }else{
