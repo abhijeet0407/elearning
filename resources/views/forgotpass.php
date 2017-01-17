@@ -338,7 +338,7 @@ form button:hover {
 
 
                         },function(){
-                               //window.location.href='<?php echo url('/login') ?>'
+                               window.location.href='<?php echo url('/login') ?>'
                             })
 
                     }else{

@@ -232,7 +232,7 @@ form button:hover {
     margin-top: 10px;
     padding-left: 175px; }
     #myModal label,.modal-title{ color: #000 !important; }
-   .em:focus{ width: 100% !important; text-align: left; }
+   .em:focus{ width: 100% !important; text-align: left !important; }
     </style>
 </head>
 <body >
