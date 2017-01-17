@@ -17,9 +17,9 @@ Route::auth();
 
 Route::get('/', 'HomeController@index');
 Route::get('/changepassword', 'HomeController@changepassword');
-Route::get('/forgotpassword', 'HomeController@forgotpassword');
-Route::get('/forgotpass', 'HomeController@forgotpass');
-Route::get('/forgotpasssubmit', 'HomeController@forgotpasssubmit');
+Route::get('/forgotpassword', 'forgotController@forgotpassword');
+Route::get('/forgotpass', 'forgotController@forgotpass');
+Route::get('/forgotpasssubmit', 'forgotController@forgotpasssubmit');
 Route::get('/videologcount', 'HomeController@videologcount');
 Route::get('/userregister','UserRegistrationController@index');
 Route::get('/userregistercreate','UserRegistrationController@create');
