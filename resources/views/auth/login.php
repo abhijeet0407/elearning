@@ -321,7 +321,7 @@ form button:hover {
                 $('#forgotpassword').submit(function(e){
                   e.preventDefault();
                 $.ajax({
-                    url: '<?php echo url('/forgotpass') ?>',
+                    url: '<?php echo url('/forgotpassword') ?>',
                     type: 'GET',
                     data: 'email='+$('#myModal').find('[name="email"]').val(),
                   })
