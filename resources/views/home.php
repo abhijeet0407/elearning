@@ -29,6 +29,8 @@
     <!-- Theme CSS -->
     <link href="https://www.hrjohnsonindia.com/elearning/public/css/creative.min.css" rel="stylesheet">
 
+    <link href="https://www.hrjohnsonindia.com/elearning/public/css/sweetalert.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -185,7 +187,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                                <?php }else{ ?>
                                 <a href="javascript:void(0)" class="dropdown-toggle dropdown-btn" data-toggle="dropdown"><span class="fa fa-bars"></span></a>
                                   <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0)">Change Password</a></li>
+                                    <li><a class="change_password" href="javascript:void(0)">Change Password</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo url('/logout') ?>">Logout</a></li>
                                   </ul>  
@@ -381,6 +383,38 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
         </div>
     </section>
 
+
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Change Password</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="changepassword" action=" <?php echo url('/changepassword') ?>  ">
+             <div class="form-group">
+                <label for="email">Email address:</label>
+                 <input type="email" name="email" class="form-control" value="<?php echo Auth::user()->email  ?>" disabled="disabled" required="required">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" name="password" minlength="6" required="required" placeholder="Password">
+              </div>
+           
+            
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
     <!-- jQuery -->
     <script src="https://www.hrjohnsonindia.com/elearning/public/vendor/jquery/jquery.min.js"></script>
 
@@ -394,6 +428,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
 
     <!-- Theme JavaScript -->
     <script src="https://www.hrjohnsonindia.com/elearning/public/js/creative.min.js"></script>
+    <script src="https://www.hrjohnsonindia.com/elearning/public/js/sweetalert.min.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function($) {
@@ -421,6 +456,44 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
 
 
             });
+
+
+            $('.change_password').click(function(){
+
+                $('#myModal').modal('show');
+
+
+            })
+
+            $('#changepassword').submit(function(e){
+
+                e.preventDefault();
+
+                $.ajax({
+                    url: '<?php echo url('/changepassword') ?>',
+                    type: 'GET',
+                    data:'password='+$('input[name="password"]').val()
+                })
+                .done(function(data) {
+                    //console.log("success");
+                    if(data=='Password Changed successfully'){
+                        swal("Good job!", "Password changed successfully. Please login again with new password", "success")
+                        //alert('Password changed successfully. Please login again with new password');
+                        window.location.href='<?php echo url('/logout') ?>';
+                    }else{
+                        sweetAlert("Oops...", data, "error");
+                        //alert(data);
+                    }
+                })
+                .fail(function() {
+                    console.log("error");
+                })
+                .always(function() {
+                    console.log("complete");
+                });
+                
+
+            })
             
             
         });

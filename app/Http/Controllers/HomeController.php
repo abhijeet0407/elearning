@@ -6,6 +6,8 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\videolog;
+use App\User;
+use Illuminate\Support\Facades\Validator;
 class HomeController extends Controller
 {
     
@@ -32,6 +34,26 @@ class HomeController extends Controller
         $count2 = videolog::where('video_id','=',2)->count();
         $count3 = videolog::where('video_id','=',3)->count();
         return view('home',compact('count0','count1','count2','count3'));
+    }
+
+    public function changepassword(Request $request){
+        if(Auth::user()->id!=''){
+
+            $validator = Validator::make($request->all(), [
+            'password' => 'required|min:6',
+            ]);
+
+            if ($validator->fails()) {
+                return 'Password should be atleast 6 characters';
+            }
+         
+            $user=User::find(Auth::user()->id);
+            $user->password=bcrypt($request['password']);
+            $user->save();
+            return 'Password Changed successfully';
+
+
+        }
     }
 
     public function videologcount(Request $request)
