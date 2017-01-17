@@ -9,7 +9,9 @@ use App\User;
 use App\userlog;
 use App\userlogout;
 use App\videolog;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Routing\Redirector;
 class UserRegistrationController extends Controller
 {
     //
@@ -40,9 +42,12 @@ class UserRegistrationController extends Controller
     }
 
 
-     public function __construct()
+     public function __construct(Redirector $redirect)
     {
         $this->middleware('auth');
+        if(Auth::user()->id!=1){
+             $redirect->to('/')->send();
+        }
     }
 
     public function create()
