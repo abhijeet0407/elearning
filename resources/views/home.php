@@ -37,6 +37,7 @@
     <![endif]-->
     <style type="text/css">
         .navbar-default .navbar-header .navbar-brand{min-height: 58px;}
+        header{     background-position: 100% !important; }
         header .header-content .header-content-inner{ padding-top: 40px; }
         .m-t-20{ margin-top: 20px; }
         video::-internal-media-controls-download-button {
@@ -89,13 +90,14 @@ header{ min-height: 60%;  }
 
 .popup-gallery .panel-default{ border-color: transparent !important; }
 
-.popup-gallery .panel-body{ margin-top: 10px; background-color: #f4f4f4;  padding-left: 15px; padding-right: 15px; -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75); }
+.popup-gallery .panel-body{     background-color: #f4f4f4;
+   
+    padding: 5px 10px;
+    }
 .popup-gallery .panel-body p{font-size:22px; text-align: left;}
-.video_views{ font-size: 20px; color: #cc2229; text-align: left; font-family:"Lato", sans-serif; font-weight: 700;  }
+.video_views{ font-size: 14px; color: #cc2229; text-align: left; font-family:"Lato", sans-serif; font-weight: 700; margin-top: 5px;   }
 
-.video_views span{color: #a8a8a8; font-size:18px;}
+.video_views span{color: #a8a8a8; font-size:14px;}
 
 .popup-gallery .panel-body hr{border-color: #e4e4e4 !important;
     max-width: 100%;
@@ -122,8 +124,20 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
 
 
 .popup-gallery{ margin-top: 40px; }
+.vid_title{    color: #cc2229;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 20px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    text-align: left;}
+
+.vid_title p{ margin-bottom: 5px; }    
+
 
     </style>
+
+
 
 
 
