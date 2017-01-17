@@ -119,8 +119,12 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
 .ft2 .fa{ font-size: 28px !important; }
 
 #contact .row{ margin-right: 0px !important; margin-left: 0px !important; }
+
+
+.popup-gallery{ margin-top: 40px; }
+
     </style>
-}
+
 
 
 
@@ -210,11 +214,11 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                 --> 
              <div class="row">
                 <div class="col-md-4">
-                    <div class="about-btn">ABOUT</div>
+                    <!-- <div class="about-btn">ABOUT</div> -->
                     <div class="header1">H&R JOHNSON (INDIA)</div>
                     <div class="header2">A DIVISION OF <span>PRISM CEMENT LIMITED</span></div>
                     <div class="headerdesc">The only entity in India to offer end-to-end lifestyle solutions covering Wall and Floor Tiles, Faucets, Sanitaryware & Wellness products, Engineered Marble and Quartz as well as Modular Kitchens.</div>
-                    <div class="knowmorebtn"><a href="https://www.hrjohnsonindia.com/about-us.php">KNOW MORE</a></div>
+                    <!-- <div class="knowmorebtn"><a href="https://www.hrjohnsonindia.com/about-us.php">KNOW MORE</a></div> -->
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-4"><img src="img/icon1.png"></div>
@@ -243,6 +247,9 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                 <div class="col-lg-6 col-sm-12 video-box">
   
                     <div class="panel panel-default">
+                    <div class="vid_title">
+                        <p>Creation of Specifier</p>
+                    </div>    
                       <div class="panel-thumbnail">
                           <video poster="img/1.jpg" style="width: 100%;"  controls>
                               <source src="video/1_specifier.mp4" type="video/mp4">
@@ -251,8 +258,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                             </video>
                       </div>
                       <div class="panel-body">
-                        <p>Creation of Specifier</p>
-                        <hr>
+                        
                         <div class="row">
                             <div class="col-md-6 video_views"><?php echo $count0; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>9.28 Min</span></div>
@@ -264,6 +270,9 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                 <div class="col-lg-6 col-sm-12 video-box">
   
                     <div class="panel panel-default">
+                     <div class="vid_title">
+                        <p>Project Creation & Entering of product details</p>
+                     </div>   
                       <div class="panel-thumbnail">
                           <video poster="img/2.jpg" style="width: 100%;"  controls>
                               <source src="video/2_creation.mp4" type="video/mp4">
@@ -273,8 +282,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                       </div>
                       
                       <div class="panel-body">
-                        <p>Project Creation & Entering of product details</p>
-                        <hr>
+                        
                         <div class="row">
                             <div class="col-md-6 video_views"><?php echo $count1; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>12.22 Min</span></div>
@@ -287,6 +295,9 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                 <div class="col-lg-6 col-sm-12 video-box">
   
                     <div class="panel panel-default">
+                    <div class="vid_title">
+                        <p>Quotation Creation and editing of quotation</p>
+                    </div>    
                       <div class="panel-thumbnail">
                           <video poster="img/3.jpg" style="width: 100%;"  controls>
                               <source src="video/3_quotation.mp4" type="video/mp4">
@@ -296,8 +307,8 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                       </div>
                       
                       <div class="panel-body">
-                        <p>Quotation Creation and editing of quotation</p>
-                        <hr>
+                        
+                        
                         <div class="row">
                             <div class="col-md-6 video_views"><?php echo $count2; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>7.23 Min</span></div>
@@ -311,6 +322,9 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
   
                     <div class="panel panel-default">
                       <div class="panel-thumbnail">
+                      <div class="vid_title">
+                        <p>Order Creation & Schedule Supply</p>
+                      </div>  
                           <video poster="img/4.jpg" style="width: 100%;"  controls>
                               <source src="video/4_supply.mp4" type="video/mp4">
                               
@@ -318,8 +332,6 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                             </video>
                       </div>
                       <div class="panel-body">
-                        <p>Order Creation & Schedule Supply</p>
-                        <hr>
                         <div class="row">
                             <div class="col-md-6 video_views"><?php echo $count3; ?> <span>views</span></div>
                             <div class="col-md-6 video_duration">Duration: <span>8.13 Min</span></div>

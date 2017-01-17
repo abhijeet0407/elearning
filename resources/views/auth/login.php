@@ -16,7 +16,7 @@
   
 
     <style>
-        @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -232,7 +232,7 @@ form button:hover {
 <body >
 <div class="wrapper">
 	<div class="container">
-		<h1>Welcome to Johnson e-Learning</h1>
+		<img src="img/logo-johnson.png">
 		
 		<form class="form-horizontal" role="form" method="POST" action="<?php echo url('/login') ?>">
                         <?php echo csrf_field() ?>
