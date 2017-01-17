@@ -240,13 +240,13 @@ form button:hover {
 	<div class="container">
 		<img src="img/logo-johnson.png">
 		
-		<form class="form-horizontal" role="form" method="POST" action="<?php echo url('/login') ?>">
+		<form class="form-horizontal" id="forgotpasssubmit"> role="form" method="POST" action="<?php echo url('/forgotpasssubmit') ?>">
                         <?php echo csrf_field() ?>
-			<input type="text" name="empid" placeholder="Username">
+			<input type="text" name="email" disabled="disabled" placeholder="Username" value="<?php echo $user->email ?>">
 			<input type="password" name="password" placeholder="Password">
-			<button type="submit" id="login-button">Login</button>
+			<button type="submit" id="login-button">Change Password</button>
       <div class="clearfix"></div>
-      <a class="forgot_pass" href="javascript:void(0)">Forgot Password?</a>
+      
 		</form>
 	</div>
 	
@@ -318,12 +318,12 @@ form button:hover {
                   $('#myModal').modal('show');
 
                 })
-                $('#forgotpassword').submit(function(e){
+                $('#forgotpasssubmit').submit(function(e){
                   e.preventDefault();
                 $.ajax({
-                    url: '<?php echo url('/forgotpass') ?>',
+                    url: '<?php echo url('/forgotpasssubmit') ?>',
                     type: 'GET',
-                    data: 'email='+$('#myModal').find('[name="email"]').val(),
+                    data: 'password='+$('#forgotpasssubmit').find('[name="password"]').val(),
                   })
                   .done(function(data) {
                     //console.log("success");
@@ -331,7 +331,7 @@ form button:hover {
 
                       swal({
                             title:"",
-                            text:"Change password link has been emailed to you. Please click on the link to reset your password.",
+                            text:"Password changed successfully.",
                             type: "success",
                             confirmButtonText:"OK"
 

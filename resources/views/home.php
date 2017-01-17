@@ -477,9 +477,18 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                 .done(function(data) {
                     //console.log("success");
                     if(data=='Password Changed successfully'){
-                        swal("Good job!", "Password changed successfully. Please login again with new password", "success")
+                        swal({
+                            title:"Good job!",
+                            text:"Password changed successfully. Please login again with new password",
+                            type: "success",
+                            confirmButtonText:"OK"
+
+
+                        },function(){
+                                window.location.href='<?php echo url('/logout') ?>';
+                            })
                         //alert('Password changed successfully. Please login again with new password');
-                        window.location.href='<?php echo url('/logout') ?>';
+                        
                     }else{
                         sweetAlert("Oops...", data, "error");
                         //alert(data);
