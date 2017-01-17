@@ -40,7 +40,7 @@ class HomeController extends Controller
         $videolog=new videolog;
             $videolog->user_id=Auth::user()->id;
             $videolog->video_id=$request['video'];
-            $videolog->userlog_id=$value = $request->session()->get('UserLoginId');
+            $videolog->userlog_id=$request->session()->get('UserLoginId');
             $videolog->save();
         }    
        
