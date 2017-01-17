@@ -14,7 +14,7 @@ class AlterTableVideologs extends Migration
     {
         Schema::table('videologs', function (Blueprint $table) {
             //
-            $table->string('userlog_id')->nullable();
+            $table->integer('userlog_id')->unsigned();
         });
     }
 

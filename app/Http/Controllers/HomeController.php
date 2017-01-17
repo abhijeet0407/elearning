@@ -24,8 +24,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        //return $request->session()->get('UserLoginId');
         $count0 = videolog::where('video_id','=',0)->count();
         $count1 = videolog::where('video_id','=',1)->count();
         $count2 = videolog::where('video_id','=',2)->count();
