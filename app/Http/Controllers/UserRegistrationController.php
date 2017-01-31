@@ -22,6 +22,11 @@ class UserRegistrationController extends Controller
 
     }
 
+    public function destroy(Request $request){
+        User::destroy($request['id']);
+        return redirect('userregister');
+    }
+
     public function userlog()
     {
         $userlog=userlog::where('user_id','!=',1)->get();
