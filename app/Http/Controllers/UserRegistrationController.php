@@ -24,7 +24,7 @@ class UserRegistrationController extends Controller
 
     public function destroy(Request $request){
         User::destroy($request['id']);
-        return redirect('userregister');
+        return $request['id'];
     }
 
     public function userlog()
