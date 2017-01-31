@@ -178,7 +178,7 @@ hr{ border-color:#e42c33 !important;  }
                             <label for="email" class="col-md-4 control-label">Employee Id</label>
 
                             <div class="col-md-6">
-                                <input id="empid" type="text" class="form-control" name="empid" value="<?php echo  old('empid')  ?> ">
+                                <input id="empid" type="text" class="form-control" name="empid" value="<?php echo  old('empid')  ?>">
 
                                 <?php if ($errors->has('empid')) { ?>
                                     <span class="help-block">
