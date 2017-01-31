@@ -221,6 +221,9 @@ hr{ border-color:#e42c33 !important;  }
                   });
 
             $('.delete_user').click(function(){
+                if(confirm('Are your sure you want to delete?')){
+
+
                 var ids=$(this).attr('rel')
                 $.ajax({
                 url: '<?php echo url('/userdestroy'); ?>',
@@ -238,6 +241,7 @@ hr{ border-color:#e42c33 !important;  }
             .always(function() {
                 console.log("complete");
             });
+             }
 
             })
 
