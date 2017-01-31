@@ -28,6 +28,8 @@ class UserRegistrationController extends Controller
         $abc = User::find($request['id']);
 
         $abc->delete();
+        return redirect('/userregister');
+
     }
 
     public function userlog()
