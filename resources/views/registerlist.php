@@ -230,7 +230,7 @@ hr{ border-color:#e42c33 !important;  }
             .done(function(data) {
                 console.log(ids);
                 console.log(data);
-                $('delete_user[rel="'+ids+'"]').parent().parent().remove();
+                $('.delete_user[rel="'+ids+'"]').parent().parent().remove();
             })
             .fail(function() {
                 console.log("error");
