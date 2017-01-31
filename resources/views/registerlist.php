@@ -228,6 +228,7 @@ hr{ border-color:#e42c33 !important;  }
                 data: 'id='+ids,
             })
             .done(function(data) {
+                console.log(ids);
                 console.log(data);
                 $('delete_user[rel="'+ids+'"]').parent().parent().remove();
             })
