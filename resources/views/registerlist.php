@@ -170,7 +170,7 @@ hr{ border-color:#e42c33 !important;  }
                                         <td><?php echo $usr->email ?></td>
                                         <td><?php echo $usr->empid ?></td>
                                         
-                                        <td><a href="javascript:void(0)" class="btn delete_user btn-primary">Delete</a></td>
+                                        <td><a href="javascript:void(0)" rel="<?php echo $usr->id ?>" class="btn delete_user btn-primary">Delete</a></td>
                                       </tr>
                                <?php $i++; } } ?>       
                                       </tbody>
