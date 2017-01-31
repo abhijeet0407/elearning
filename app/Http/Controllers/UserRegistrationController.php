@@ -23,8 +23,8 @@ class UserRegistrationController extends Controller
     }
 
     public function destroy(Request $request){
-        User::destroy($request['id']);
-        return $request['id'];
+        $abc=User::find($request['id']);
+        return $abc;
     }
 
     public function userlog()
