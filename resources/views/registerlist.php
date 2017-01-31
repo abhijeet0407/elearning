@@ -170,7 +170,7 @@ hr{ border-color:#e42c33 !important;  }
                                         <td><?php echo $usr->email ?></td>
                                         <td><?php echo $usr->empid ?></td>
                                         
-                                        <td><a href="<?php echo url('/userdestroy/'.$usr->id); ?>" class="btn btn-primary">Delete</a></td>
+                                        <td><a href="javascript:void(0)" class="btn delete_user btn-primary">Delete</a></td>
                                       </tr>
                                <?php $i++; } } ?>       
                                       </tbody>
@@ -219,6 +219,30 @@ hr{ border-color:#e42c33 !important;  }
         }
                   
                   });
+
+            $('.delete_user').click(function(){
+                var ids=$(this).attr('rel')
+                $.ajax({
+                url: '<?php echo url('/userdestroy'); ?>',
+                type: 'GET',
+                data: 'id='+ids,
+            })
+            .done(function(data) {
+                $('delete_user[rel="'+ids+'"]').parent().parent().remove();
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+
+            })
+
+            
+            
+
+
         });
     </script>
 
