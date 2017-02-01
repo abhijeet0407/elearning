@@ -478,7 +478,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                     //console.log("success");
                     if(data=='Password Changed successfully'){
                         swal({
-                            title:"Good job!",
+                            title:"",
                             text:"Password changed successfully. Please login again with new password",
                             type: "success",
                             confirmButtonText:"OK"
