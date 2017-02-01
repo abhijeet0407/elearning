@@ -51,6 +51,7 @@ class HomeController extends Controller
             $user=User::find(Auth::user()->id);
             $user->password=bcrypt($request['password']);
             $user->first_change=1;
+            $user->remember_token='';
             $user->save();
             return 'Password Changed successfully';
 
