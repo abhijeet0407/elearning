@@ -385,7 +385,7 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
 
 
     <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal" <?php if(Auth::user()->first_change==0){ ?>  data-backdrop="static" data-keyboard="false" <?php } ?> class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -503,6 +503,12 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);}
                 
 
             })
+
+            <?php if(Auth::user()->first_change==0){ ?> 
+
+                $('#myModal').modal('show');
+                $('#myModal .close').hide();
+             <?php } ?>
             
             
         });
